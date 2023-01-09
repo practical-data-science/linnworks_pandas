@@ -94,9 +94,33 @@ def get_order_details_between_dates(start_date, end_date, verbose=False):
     start_date = start_date + "T00:00:00.000Z"
     end_date = end_date + "T23:59:59.000Z"
     params = """[
-        {"Type":"Date","Name":"startDate","Description":"Start date","DefaultValue":"","AvailableValues":[],"Value":"%s","SortOrder":0},
-        {"Type":"Date","Name":"endDate","Description":"End date","DefaultValue":"","AvailableValues":[],"Value":"%s","SortOrder":0},
-        {"Type":"Boolean","Name":"merged","Description":"Exclude merged child orders","DefaultValue":"0","AvailableValues":[],"Value":false,"SortOrder":0}]
+        {
+            "Type":"Date",
+            "Name":"startDate",
+            "Description":"Start date",
+            "DefaultValue":"",
+            "AvailableValues":[],
+            "Value":"%s",
+            "SortOrder":0
+        },
+        {
+            "Type":"Date",
+            "Name":"endDate",
+            "Description":"End date",
+            "DefaultValue":"",
+            "AvailableValues":[],
+            "Value":"%s",
+            "SortOrder":0
+        },
+        {
+            "Type":"Boolean",
+            "Name":"merged",
+            "Description":"Exclude merged child orders",
+            "DefaultValue":"0",
+            "AvailableValues":[],
+            "Value":false,
+            "SortOrder":0
+        }]
     """ % (start_date, end_date)
 
     df = execute_custom_paged_script(script_id, params, verbose=verbose)
@@ -119,8 +143,24 @@ def get_orders_between_dates(start_date, end_date, verbose=False):
     start_date = start_date + "T00:00:00.000Z"
     end_date = end_date + "T23:59:59.000Z"
     params = """[
-        {"Type":"Date","Name":"startDate","Description":"Start date","DefaultValue":"","AvailableValues":[],"Value":"%s","SortOrder":0},
-        {"Type":"Date","Name":"endDate","Description":"End date","DefaultValue":"","AvailableValues":[],"Value":"%s","SortOrder":0}]
+        {
+            "Type":"Date",
+            "Name":"startDate",
+            "Description":"Start date",
+            "DefaultValue":"",
+            "AvailableValues":[],
+            "Value":"%s",
+            "SortOrder":0
+        },
+        {
+            "Type":"Date",
+            "Name":"endDate",
+            "Description":"End date",
+            "DefaultValue":"",
+            "AvailableValues":[],
+            "Value":"%s",
+            "SortOrder":0
+        }]
     """ % (start_date, end_date)
 
     df = execute_custom_paged_script(script_id, params, verbose=verbose)
@@ -143,8 +183,24 @@ def get_order_totals_between_dates(start_date, end_date, verbose=False):
     start_date = start_date + "T00:00:00.000Z"
     end_date = end_date + "T23:59:59.000Z"
     params = """[
-        {"Type":"Date","Name":"startDate","Description":"Start date","DefaultValue":"","AvailableValues":[],"Value":"%s","SortOrder":0},
-        {"Type":"Date","Name":"endDate","Description":"End date","DefaultValue":"","AvailableValues":[],"Value":"%s","SortOrder":0}]
+        {
+            "Type":"Date",
+            "Name":"startDate",
+            "Description":"Start date",
+            "DefaultValue":"",
+            "AvailableValues":[],
+            "Value":"%s",
+            "SortOrder":0
+        },
+        {
+            "Type":"Date",
+            "Name":"endDate",
+            "Description":"End date",
+            "DefaultValue":"",
+            "AvailableValues":[],
+            "Value":"%s",
+            "SortOrder":0
+        }]
     """ % (start_date, end_date)
 
     df = execute_custom_paged_script(script_id, params, verbose=verbose)
@@ -164,9 +220,11 @@ def get_stock_items_with_levels(locationName, verbose=False):
 
     script_id = '8'
     params = """[
-        {"Type":"Select","Name":"locationName","Value": "%s"}
-    ]""" % locationName
+        {
+            "Type":"Select",
+            "Name":"locationName",
+            "Value": "%s"
+        }]""" % locationName
 
     df = execute_custom_paged_script(script_id, params, verbose=verbose)
     return df
-
