@@ -40,7 +40,7 @@ df_order_details = query.get_order_details_between_dates('2022-12-06', '2022-12-
 print(df_order_details.head(3))
 
 # Run the "Stock items with levels" Query Data report
-df_stock_items = query.get_stock_items_with_levels('Swell UK WMS', verbose=False)
+df_stock_items = query.get_stock_items_with_levels('Your WMS here', verbose=False)
 print(df_stock_items.head(3))
 
 ```
