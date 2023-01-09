@@ -8,7 +8,7 @@ with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
 setup(
     name='linnworks_pandas',
     packages=['linnworks_pandas'],
-    version='0.001',
+    version='0.002',
     license='MIT',
     description='Linnworks Pandas is a Python package that queries the Linnworks Query Data API and returns data in a Pandas dataframe. ',
     long_description=long_description,
